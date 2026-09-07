@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout - Campus Canteen</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="checkout.css">
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar checkout-navbar">
+        <div class="nav-container">
+
+            <a href="index.html" class="logo">Campus Canteen</a>
+
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="menu.html">Menu</a>
+                <a href="orders.html">My Orders</a>
+                <a href="complaints.html">Complaints</a>
+
+                <a href="cart.html" class="cart-link">
+                    <svg width="20" height="20" viewBox="0 0 24 24"
+                         fill="none" stroke="currentColor"
+                         stroke-width="2" stroke-linecap="round"
+                         stroke-linejoin="round">
+                        <circle cx="9" cy="20" r="1"></circle>
+                        <circle cx="19" cy="20" r="1"></circle>
+                        <path d="M3 4h2l2.4 11.2a2 2 0 0 0 2 1.6h7.7a2 2 0 0 0 2-1.6L21 8H6"></path>
+                    </svg>
+                    Cart
+                    <span id="cartCount">0</span>
+                </a>
+            </div>
+
+            <a href="login.html" class="nav-login">Login</a>
+
+        </div>
+    </nav>
+
+
+    <!-- Checkout -->
+    <main class="checkout-container">
+
+        <div class="checkout-header">
+            <h1>Checkout</h1>
+            <p>Choose your pickup and payment preferences</p>
+        </div>
+
+
+        <div class="checkout-layout">
+
+            <!-- Left Section -->
+            <section class="checkout-form">
+
+                <!-- Pickup Time -->
+                <div class="checkout-card">
+
+                    <h2>Pickup Time</h2>
+                    <p class="section-description">
+                        Select when you want to collect your order.
+                    </p>
+
+                    <div class="form-group">
+                        <label for="pickupTime">Pickup Time</label>
+
+                        <select id="pickupTime">
+                            <option value="">Select pickup time</option>
+                            <option value="10:00 AM">10:00 AM</option>
+                            <option value="10:30 AM">10:30 AM</option>
+                            <option value="11:00 AM">11:00 AM</option>
+                            <option value="11:30 AM">11:30 AM</option>
+                            <option value="12:00 PM">12:00 PM</option>
+                            <option value="12:30 PM">12:30 PM</option>
+                            <option value="1:00 PM">1:00 PM</option>
+                            <option value="1:30 PM">1:30 PM</option>
+                            <option value="2:00 PM">2:00 PM</option>
+                            <option value="2:30 PM">2:30 PM</option>
+                            <option value="3:00 PM">3:00 PM</option>
+                            <option value="3:30 PM">3:30 PM</option>
+                            <option value="4:00 PM">4:00 PM</option>
+                            <option value="4:30 PM">4:30 PM</option>
+                        </select>
+                    </div>
+
+                </div>
+
+
+                <!-- Cover -->
+                <div class="checkout-card">
+
+                    <h2>Cover Option</h2>
+
+                    <p class="section-description">
+                        Choose whether you need a cover for your food.
+                    </p>
+
+                    <div class="cover-options">
+
+                        <label class="option-card">
+                            <input
+                                type="radio"
+                                name="coverOption"
+                                value="no-cover"
+                                checked
+                                onchange="updateCoverCharge()"
+                            >
+
+                            <div class="option-content">
+                                <strong>No Cover</strong>
+                                <span>No additional charge</span>
+                            </div>
+                        </label>
+
+
+                        <label class="option-card">
+                            <input
+                                type="radio"
+                                name="coverOption"
+                                value="cover"
+                                onchange="updateCoverCharge()"
+                            >
+
+                            <div class="option-content">
+                                <strong>Need Cover</strong>
+                                <span>Additional ₹5</span>
+                            </div>
+                        </label>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Payment -->
+                <div class="checkout-card">
+
+                    <h2>Payment Method</h2>
+
+                    <div class="payment-options">
+
+                        <label class="option-card">
+                            <input
+                                type="radio"
+                                name="paymentMethod"
+                                value="cash"
+                                checked
+                            >
+
+                            <div class="option-content">
+                                <strong>Cash at Pickup</strong>
+                                <span>Pay when collecting your order</span>
+                            </div>
+                        </label>
+
+
+                        <label class="option-card">
+                            <input
+                                type="radio"
+                                name="paymentMethod"
+                                value="online"
+                            >
+
+                            <div class="option-content">
+                                <strong>Online Payment</strong>
+                                <span>Pay securely online</span>
+                            </div>
+                        </label>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- Right Section -->
+            <aside class="checkout-summary">
+
+                <h2>Order Summary</h2>
+
+                <div id="checkoutItems"></div>
+
+                <div class="summary-divider"></div>
+
+                <div class="summary-row">
+                    <span>Food Total</span>
+                    <span id="foodTotal">₹0</span>
+                </div>
+
+                <div class="summary-row">
+                    <span>Cover Charge</span>
+                    <span id="coverCharge">₹0</span>
+                </div>
+
+                <div class="summary-divider"></div>
+
+                <div class="summary-row summary-total">
+                    <span>Total</span>
+                    <span id="finalTotal">₹0</span>
+                </div>
+
+                <button
+                    type="button"
+                    class="place-order-btn"
+                    onclick="placeOrder()"
+                >
+                    Place Order
+                </button>
+
+                <p class="checkout-note">
+                    Your order will be confirmed after placing it.
+                </p>
+
+            </aside>
+
+        </div>
+
+    </main>
+
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2026 Campus Canteen. All rights reserved.</p>
+    </footer>
+
+
+    <script src="auth.js"></script>
+    <script src="ordering.js"></script>
+
+</body>
+</html>

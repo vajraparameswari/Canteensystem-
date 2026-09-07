@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Complaints - Campus Canteen</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="complaints.css">
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar complaints-navbar">
+
+        <div class="nav-container">
+
+            <a href="index.html" class="logo">
+                Campus Canteen
+            </a>
+
+            <div class="nav-links">
+
+                <a href="index.html">
+                    Home
+                </a>
+
+                <a href="menu.html">
+                    Menu
+                </a>
+
+                <a href="orders.html">
+                    My Orders
+                </a>
+
+                <a href="complaints.html" class="active">
+                    Complaints
+                </a>
+
+                <a href="cart.html" class="cart-link">
+
+                    <svg
+                        width="20"
+                        height="20"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round">
+
+                        <circle cx="9" cy="20" r="1"></circle>
+                        <circle cx="19" cy="20" r="1"></circle>
+
+                        <path d="M3 4h2l2.4 11.2a2 2 0 0 0 2 1.6h7.7a2 2 0 0 0 2-1.6L21 8H6"></path>
+
+                    </svg>
+
+                    Cart
+
+                    <span id="cartCount">0</span>
+
+                </a>
+
+            </div>
+
+            <a href="login.html" class="nav-login">
+                Login
+            </a>
+
+        </div>
+
+    </nav>
+
+
+    <!-- Main -->
+    <main class="complaints-container">
+
+        <div class="complaints-header">
+
+            <h1>
+                Complaints & Support
+            </h1>
+
+            <p>
+                Let us know if you faced any problem with your order.
+            </p>
+
+        </div>
+
+
+        <div class="complaints-layout">
+
+
+            <!-- Submit Complaint -->
+            <section class="complaint-form-card">
+
+                <h2>
+                    Submit a Complaint
+                </h2>
+
+                <p class="form-description">
+                    Tell us what went wrong and our canteen team
+                    will review it.
+                </p>
+
+
+                <form id="complaintForm">
+
+
+                    <!-- Order ID -->
+                    <div class="form-group">
+
+                        <label for="complaintOrderId">
+                            Order ID
+                        </label>
+
+                        <input
+                            type="text"
+                            id="complaintOrderId"
+                            placeholder="Example: ORD1723456789012">
+
+                    </div>
+
+
+                    <!-- Category -->
+                    <div class="form-group">
+
+                        <label for="complaintCategory">
+                            Complaint Category
+                        </label>
+
+                        <select id="complaintCategory" required>
+
+                            <option value="">
+                                Select a category
+                            </option>
+
+                            <option value="Food Quality">
+                                Food Quality
+                            </option>
+
+                            <option value="Wrong Order">
+                                Wrong Order
+                            </option>
+
+                            <option value="Missing Item">
+                                Missing Item
+                            </option>
+
+                            <option value="Late Order">
+                                Late Order
+                            </option>
+
+                            <option value="Payment Issue">
+                                Payment Issue
+                            </option>
+
+                            <option value="Pickup Issue">
+                                Pickup Issue
+                            </option>
+
+                            <option value="Other">
+                                Other
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <!-- Description -->
+                    <div class="form-group">
+
+                        <label for="complaintDescription">
+                            Describe the Problem
+                        </label>
+
+                        <textarea
+                            id="complaintDescription"
+                            rows="6"
+                            placeholder="Describe your complaint..."
+                            required></textarea>
+
+                    </div>
+
+
+                    <button
+                        type="submit"
+                        class="submit-complaint-btn">
+
+                        Submit Complaint
+
+                    </button>
+
+                </form>
+
+            </section>
+
+
+            <!-- Previous Complaints -->
+            <section class="previous-complaints">
+
+                <div class="previous-header">
+
+                    <h2>
+                        Previous Complaints
+                    </h2>
+
+                    <span id="complaintCount">
+                        0
+                    </span>
+
+                </div>
+
+
+                <div id="complaintsList">
+
+                    <!-- Complaints loaded using JavaScript -->
+
+                </div>
+
+            </section>
+
+        </div>
+
+    </main>
+
+
+    <!-- Footer -->
+    <footer class="footer">
+
+        <p>
+            &copy; 2026 Campus Canteen. All rights reserved.
+        </p>
+
+    </footer>
+
+
+    <script src="auth.js"></script>
+    <script src="complaints.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Admin Dashboard - Campus Canteen</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="admin.css">
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar admin-navbar">
+
+        <div class="admin-nav-container">
+
+            <a href="admin.html" class="admin-logo">
+                Campus Canteen
+                <span>Admin</span>
+            </a>
+
+            <div class="admin-nav-links">
+
+                <a href="admin.html" class="active">
+                    Dashboard
+                </a>
+
+                <a href="menu.html">
+                    Menu
+                </a>
+
+                <a href="orders.html">
+                    Orders
+                </a>
+
+                <a href="complaints.html">
+                    Complaints
+                </a>
+
+            </div>
+
+            <a href="index.html" class="admin-logout">
+                Exit Admin
+            </a>
+
+        </div>
+
+    </nav>
+
+
+    <!-- Main -->
+    <main class="admin-container">
+
+        <div class="admin-header">
+
+            <div>
+
+                <h1>
+                    Admin Dashboard
+                </h1>
+
+                <p>
+                    Manage your canteen operations from here.
+                </p>
+
+            </div>
+
+            <span class="admin-date" id="adminDate">
+            </span>
+
+        </div>
+
+
+        <!-- Statistics -->
+        <section class="stats-grid">
+
+
+            <div class="stat-card">
+
+                <div class="stat-content">
+
+                    <span class="stat-label">
+                        Total Orders
+                    </span>
+
+                    <strong
+                        id="totalOrders"
+                        class="stat-value">
+                        0
+                    </strong>
+
+                </div>
+
+                <div class="stat-icon">
+                    ORD
+                </div>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <div class="stat-content">
+
+                    <span class="stat-label">
+                        Pending Orders
+                    </span>
+
+                    <strong
+                        id="pendingOrders"
+                        class="stat-value">
+                        0
+                    </strong>
+
+                </div>
+
+                <div class="stat-icon">
+                    PEN
+                </div>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <div class="stat-content">
+
+                    <span class="stat-label">
+                        Completed Orders
+                    </span>
+
+                    <strong
+                        id="completedOrders"
+                        class="stat-value">
+                        0
+                    </strong>
+
+                </div>
+
+                <div class="stat-icon">
+                    OK
+                </div>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <div class="stat-content">
+
+                    <span class="stat-label">
+                        Complaints
+                    </span>
+
+                    <strong
+                        id="totalComplaints"
+                        class="stat-value">
+                        0
+                    </strong>
+
+                </div>
+
+                <div class="stat-icon">
+                    CMP
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- Quick Actions -->
+        <section class="admin-section">
+
+            <div class="section-title">
+
+                <h2>
+                    Quick Actions
+                </h2>
+
+            </div>
+
+
+            <div class="quick-actions">
+
+
+                <a
+                    href="admin-orders.html"
+                    class="quick-action-card">
+
+                    <strong>
+                        Manage Orders
+                    </strong>
+
+                    <span>
+                        View and update order statuses
+                    </span>
+
+                </a>
+
+
+                <a
+                    href="admin-menu.html"
+                    class="quick-action-card">
+
+                    <strong>
+                        Manage Menu
+                    </strong>
+
+                    <span>
+                        Add, edit or remove food items
+                    </span>
+
+                </a>
+
+
+                <a
+                    href="admin-complaints.html"
+                    class="quick-action-card">
+
+                    <strong>
+                        Manage Complaints
+                    </strong>
+
+                    <span>
+                        Review and respond to complaints
+                    </span>
+
+                </a>
+
+
+                <a
+                    href="admin-stock.html"
+                    class="quick-action-card">
+
+                    <strong>
+                        Manage Stock
+                    </strong>
+
+                    <span>
+                        Control food availability
+                    </span>
+
+                </a>
+
+
+                <a
+                    href="admin-events.html"
+                    class="quick-action-card">
+
+                    <strong>
+                        Manage Events
+                    </strong>
+
+                    <span>
+                        Create and manage college events
+                    </span>
+
+                </a>
+
+
+                <a
+                    href="admin-reports.html"
+                    class="quick-action-card">
+
+                    <strong>
+                        Reports
+                    </strong>
+
+                    <span>
+                        View orders and canteen reports
+                    </span>
+
+                </a>
+
+            </div>
+
+        </section>
+
+
+        <!-- Recent Orders -->
+        <section class="admin-section">
+
+            <div class="section-heading-row">
+
+                <h2>
+                    Recent Orders
+                </h2>
+
+                <a href="admin-orders.html">
+                    View All
+                </a>
+
+            </div>
+
+
+            <div
+                id="recentOrders"
+                class="recent-list">
+
+                <!-- Loaded using JavaScript -->
+
+            </div>
+
+        </section>
+
+
+        <!-- Recent Complaints -->
+        <section class="admin-section">
+
+            <div class="section-heading-row">
+
+                <h2>
+                    Recent Complaints
+                </h2>
+
+                <a href="admin-complaints.html">
+                    View All
+                </a>
+
+            </div>
+
+
+            <div
+                id="recentComplaints"
+                class="recent-list">
+
+                <!-- Loaded using JavaScript -->
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- Footer -->
+    <footer class="footer">
+
+        <p>
+            &copy; 2026 Campus Canteen. All rights reserved.
+        </p>
+
+    </footer>
+
+
+    <script src="admin.js"></script>
+
+</body>
+
+</html>
